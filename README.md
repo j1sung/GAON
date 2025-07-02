@@ -6,7 +6,7 @@ ex) 플레이어 구현 시, 실험용으로 씬과 스프라이트들을 관리
    
    → 개별 폴더 만들고 내부에서 작업 완료 후 `Main` 병합 전에 정리하거나 `.gitignore`에 해당 폴더 추가하기
 
-### 📁 작업 규칙
+## 📁 작업 규칙
 
 1. **개인 작업 시, 브런치를 나눠서 작업**
    - 개인 브런치에서는 실험용 폴더나 씬을 만들어도 됨
@@ -38,3 +38,25 @@ ex) 플레이어 구현 시, 실험용으로 씬과 스프라이트들을 관리
    | refactor | 기능 변화 없이 코드 리팩터링 (예: 변수 이름 변경)                   |
    | test     | 테스트 코드 추가 또는 수정                                          |
    | release  | 버전 릴리즈 관련 커밋                                               |
+
+## 🗂 Directory
+```
+📂 Assets
+ ├─📂 Player // 플레이어 관련 작업 폴더
+ |  ├─📂 Sprites
+ |  ├─📂 Materials
+ |  ├─📂 Textures
+ |  ├─📂 Prefabs
+ |  └─📂 Scripts
+ ├─📂 Enemy  // 적 관련 작업 폴더 + FSM
+ |  └─📂 Scripts
+ ├─📂 Map    // 배경 관련 작업 폴더
+ |  └─📂 Scripts
+ ├─📂 UI     // UI 관련 작업 폴더
+ |  └─📂 Scripts
+ ├─📂 Common // 공용 사용 작업 폴더
+ |  └─📂 Scripts
+ |     - GameManager.cs
+ └─📂 Scenes // 최종 씬
+    - GAON.scene (메인 Scene)
+```
