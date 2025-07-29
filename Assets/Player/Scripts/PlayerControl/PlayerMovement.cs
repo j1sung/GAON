@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,18 +15,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-    float moveX = Input.GetAxisRaw("Horizontal");
-    float moveZ = Input.GetAxisRaw("Vertical");
-    movement = new Vector3(moveX, 0f, moveZ).normalized;
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveZ = Input.GetAxisRaw("Vertical");
+        movement = new Vector3(moveX, 0f, moveZ).normalized;
 
-    Vector3 scale = transform.localScale;
-
-    if (moveX > 0)
-        scale.x = Mathf.Abs(scale.x);
-    else if (moveX < 0)
-        scale.x = -Mathf.Abs(scale.x);
-
-    transform.localScale = scale;
+        if (moveX != 0)
+        {
+            spriteRenderer.flipX = (moveX < 0);
+        }
     }
 
     void FixedUpdate()
