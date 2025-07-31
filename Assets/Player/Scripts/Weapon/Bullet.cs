@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public float lifetime = 3f;
+    public float damage = 50f;
 
     private float timer = 0f;
     private Rigidbody rb;
@@ -34,5 +35,27 @@ public class Bullet : MonoBehaviour
         direction.y = 0f;
         direction.Normalize();
         rb.velocity = direction * speed;
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            return;
+
+        if (other.CompareTag("Enemy"))
+        {
+            // Enemy 태그 객체의 콜라이더를 감지하면 적의 체력을 담당하는 클래스를 가져옴. 
+            /* EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        } */
+
+            gameObject.SetActive(false);
+        }
     }
 }

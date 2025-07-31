@@ -21,12 +21,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveX != 0)
         {
-            spriteRenderer.flipX = (moveX < 0);
+            spriteRenderer.flipX = (moveX > 0);
         }
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        
+        if (movement == Vector3.zero) // 멈출 때 잔여 속도 제거
+        {
+        rb.velocity = Vector3.zero; 
+        rb.angularVelocity = Vector3.zero;
+        }
     }
 }
