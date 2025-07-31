@@ -21,16 +21,13 @@ public class Player_JS : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.z = Input.GetAxisRaw("Vertical");
+
+        if (inputVec.x != 0)
+            spriter.flipX = inputVec.x > 0; // 플레이어 좌우 회전
     }
     private void FixedUpdate()
     {
         Vector3 nextVec = inputVec.normalized * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + nextVec);
-    }
-
-    private void LateUpdate()
-    {
-        if(inputVec.x != 0)
-            spriter.flipX = inputVec.x < 0; // 플레이어 좌우 회전
     }
 }
