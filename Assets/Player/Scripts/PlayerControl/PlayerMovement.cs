@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer spriteRenderer;
     private Vector3 movement;
+    public Vector3 Movement => movement;
 
     void Start()
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditorInternal.VersionControl.ListControl;
+//using static UnityEditorInternal.VersionControl.ListControl;
 
 public enum EnemyStates { SpawnState = 0, ChaseState, AttackState, DieState }
 
@@ -149,8 +149,8 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Damage"))
         {
-            DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-            status.ReduceHealth(damageDealer.damage);
+            Bullet bullet = other.GetComponent<Bullet>();
+            status.ReduceHealth(bullet.damage);
 
             // 피격 시 색상 반짝이기
             StartCoroutine(HitFlash());
