@@ -73,12 +73,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if (slot.weaponData == null) continue;
 
-        slot.fireTimer += Time.deltaTime;
+        slot.fireTimer += 1f * Time.deltaTime;
         if (slot.fireTimer >= slot.weaponData.attackInterval)
         {
             Debug.Log($"스킬 발사: {slot.weaponData.weaponName}");
             FireSkill(slot.weaponData);
-            slot.fireTimer = 0f;
+            slot.fireTimer -= slot.weaponData.attackInterval;
         }
     }
 }
@@ -134,7 +134,7 @@ public class PlayerAttack : MonoBehaviour
         if (skillSlots[i].weaponData == null)
         {
             skillSlots[i].weaponData = newWeapon;
-            skillSlots[i].fireTimer = 0f;
+            skillSlots[i].fireTimer = skillSlots[i].weaponData.attackInterval;
             Debug.Log($"스킬 슬롯 {i}에 {newWeapon.weaponName} 등록됨");
             return;
         }

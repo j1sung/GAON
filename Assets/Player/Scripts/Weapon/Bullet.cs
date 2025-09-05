@@ -10,10 +10,12 @@ public class Bullet : MonoBehaviour
 
     private float timer = 0f;
     private Rigidbody rb;
+ 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     void OnEnable()
@@ -26,6 +28,7 @@ public class Bullet : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= lifetime)
         {
+            //sr.color = Color.white;
             gameObject.SetActive(false); // 파괴 대신 비활성화
         }
     }
@@ -58,4 +61,14 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    /*
+    void OnDisable()
+    {
+        SpriteRenderer sr;
+        sr = transform.Find("bulletSprite")?.GetComponentInChildren<SpriteRenderer>();
+        if(sr != null)
+            sr.color = Color.white;
+    }
+    */
 }

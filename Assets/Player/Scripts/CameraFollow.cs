@@ -18,6 +18,6 @@ public class CameraFollow : MonoBehaviour
         if (target == null) return;
 
         // 자동 계산된 오프셋으로 위치 설정
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, 5f * Time.deltaTime);
+        transform.position = target.position + offset;
     }
 }
