@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,14 +23,15 @@ public class Reposition : MonoBehaviour
         switch (transform.tag)
         {
             case "Enemy":
-                if (coll.enabled) // Á×Àº ÀûÀº ÄÝ¶óÀÌ´õ ²¨Áü
+                if (coll.enabled) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½
                 {
-                    // Àû°ú Area¸¸Å­ ¸Ö¾îÁö¸é ÇÃ·¹ÀÌ¾î ÁÖº¯À¸·Î Àû À§Ä¡ ½ºÆù
+                    // ï¿½ï¿½ï¿½ï¿½ Areaï¿½ï¿½Å­ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
                     transform.Translate(playerDir * 8 + new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f))); 
 
-                    // ÃßÈÄ ¿ÀºêÁ§Æ® Ç®¸µ È¸¼ö & ½ºÅÝ ÃÊ±âÈ­ ±¸¹® º¯°æ
+                    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Ç®ï¿½ï¿½ È¸ï¿½ï¿½ & ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 }
                 break;
         }
     }
 }
+*/
